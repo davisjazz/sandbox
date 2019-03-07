@@ -3,25 +3,12 @@
 
 /* ----------- header file ------------------------------------------ */
 #include "main.hpp"
-using namespace std;
+#include "Gameboard.h"
 /* ----------- class Gameboard -------------------------------------- */
-class Gameboard {
-    string gameSpace[4][4];
-    char chr;
-    public:
-        Gameboard(); //initialize the board with '-' in all 16 spaces
-        void setGameSpace(int row,int column, char value); //x,y,or '-' in each game square
-        string getGameSpace(int row,int column);
-        int findFour(char chr); //four 'x's in any row 'wins'
-        void printInfo(); //print the game board in a 4x4 matrix
-        void updateBoard(string str0, char symbol);
-        //~Gameboard();
-};
-
 Gameboard::Gameboard() { //define the constructor
     for(int i=0;i<4;i++) {
         for(int j=0;j<4;j++) {
-            gameSpace[i][j] = to_string( (i+1)*10 + (j+1) );
+            gameSpace[i][j] = std::to_string( (i+1)*10 + (j+1) );
             //test0: OK - diag0 - if(i==j) { gameSpace[i][j] = "x"; }
             //test1: OK - diag1 - if(i==(3-j)) { gameSpace[i][j] = "x"; }
             //test2: OK - row - gameSpace[1][j] = "x";
@@ -29,8 +16,6 @@ Gameboard::Gameboard() { //define the constructor
         }
     }
 }
-
-//Gameboard::~Gameboard() { cout<<"\n  Deleting the Gameboard object\n\n"; } //define the destructor
 
 void Gameboard::setGameSpace(int row, int column, char value) { gameSpace[row][column] = value;} //mutator method
 string Gameboard::getGameSpace(int row, int column) { return gameSpace[row][column];} //accessor method
@@ -58,10 +43,10 @@ int Gameboard::findFour(char chr) { //four symbols in any row, col, diagonals 'w
     return 0;
 }
 
-void Gameboard::updateBoard(string str0, char symbol) {
+void Gameboard::updateBoard(std::string str0, char symbol) {
     //Convert player's input in coordinates
     int row=0, column=0, k=0;
-    stringstream(str0) >> k;
+    std::stringstream(str0) >> k;
     row=k/10-1;
     column=k%10-1;
     //Update gameboard setGameSpace(int row, int column, char value)
