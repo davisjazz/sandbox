@@ -4,7 +4,6 @@
 /* ----------- header file ------------------------------------------ */
 #include "main.hpp"
 #include "User.h"
-using namespace std;
 /* ----------- class User ------------------------------------------- */
 User::User()  { name="Unkonw"; chr='.'; }          //define the constructor
 
