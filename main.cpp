@@ -16,31 +16,32 @@ with 4 of the same symbol, the game is tied. Declare a tie game.
 */
 
 #include "main.hpp"
+#include "User.h"
+#include "Gameboard.h"
+/*
 #include "User.cpp"
 #include "Gameboard.cpp"
-
+*/
 int main() {
-    int    count=1, out=1;
+    int count=1, out=1;
     string str0 ="";
+    User array_usr[2];
     //Create a 4x4 game board
     Gameboard game;
     //Prompt users to enter their name
-    usrs players;
-    players = create_2user();
-    //Create list, list iterator
-    list<User> playerList = { players.usr0, players.usr1 };
+    set_2usrs(array_usr);
     //Play until there is a winner or the gird is filled
     while((count < 16)&&(out != 0)) {
-        for( User& usr : playerList ) {
+        for(int i=0;i<2;i++) {
             //Prompt users to select a grid position
-            cout<<"\n       "<< usr.get_name() <<", select a grid position: \n";
+            cout<<"\n       "<< array_usr[i].get_name() <<", select a grid position: \n";
             cout<<"\n"; game.printInfo(); cout<<"\n > ";
             cin>>str0;
             //update the gameboard after converting str0 into coordinate ( i, j )
-            game.updateBoard(str0, usr.get_symbol());
+            game.updateBoard(str0, array_usr[i].get_symbol());
             //check if four symbols are aligned:
-            if ( game.findFour(usr.get_symbol())==1 ) {
-                cout<<"\n"<<usr.get_name() <<" WINS!\n";
+            if ( game.findFour(array_usr[i].get_symbol())==1 ) {
+                cout<<"\n"<<array_usr[i].get_name() <<" WINS!\n";
                 out=0; break; }
             else if( count >= 16 ) {
                 cout<<"\nThe game is tied\n";

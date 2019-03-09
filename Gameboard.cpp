@@ -2,8 +2,10 @@
  *  Created on: 28.02.2019 */
 
 /* ----------- header file ------------------------------------------ */
+/*
 #include "main.hpp"
 #include "Gameboard.h"
+*/
 /* ----------- class Gameboard -------------------------------------- */
 Gameboard::Gameboard() { //define the constructor
     for(int i=0;i<4;i++) {
