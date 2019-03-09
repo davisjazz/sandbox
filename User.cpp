@@ -1,11 +1,6 @@
 /* User.cpp
  *  Created on: 28.02.2019 */
 
-/* ----------- header file ------------------------------------------ */
-/*
-#include "main.hpp"
-#include "User.h"
-*/
 /* ----------- class User ------------------------------------------- */
 User::User() { name="Unkonw"; chr='.'; }          //define the constructor
 
@@ -28,38 +23,4 @@ void set_2usrs(User array_usr[]) {
         array_usr[i].set_symbol(array_chr[i]);
     }
 }
-
-/*
-void set_2usrs();
-
-void set_2usrs() {
-    User array_usr[2];
-    char array_chr[] = { 'x', 'o' };
-    std::string str0;
-
-    for(int i=0;i<2;i++) {
-        cout<<"Enter player "<<i<<" 's name: ";
-        cin>>str0;
-        array_usr[i].set_name(str0);
-        array_usr[i].set_symbol(array_chr[i]);
-    }
-}
-*/
-/*
-User set_2usrs();
-
-User set_2usrs() {
-    User array_usr[2];
-    char array_chr[] = { 'x', 'o' };
-    std::string str0;
-
-    for(int i=0;i<2;i++) {
-        cout<<"Enter player "<<i<<" 's name: ";
-        cin>>str0;
-        array_usr[i].set_name(str0);
-        array_usr[i].set_symbol(array_chr[i]);
-    }
-    return array_usr;
-}*/
-
 /* ------------------------------------------------------------------ */

@@ -7,10 +7,6 @@
 
 #ifndef USER_H_
 #define USER_H_
-/*
-#include <iostream>
-#include <string>
-*/
 
 class User {                             //create a CLASS (type) called 'User'
     std::string name;                             //data attribute - private

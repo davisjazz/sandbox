@@ -18,10 +18,7 @@ with 4 of the same symbol, the game is tied. Declare a tie game.
 #include "main.hpp"
 #include "User.h"
 #include "Gameboard.h"
-/*
-#include "User.cpp"
-#include "Gameboard.cpp"
-*/
+
 int main() {
     int count=1, out=1;
     string str0 ="";
